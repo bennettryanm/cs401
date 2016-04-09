@@ -1,4 +1,4 @@
-#N canvas 82 40 1294 825 10;
+#N canvas 72 22 1294 825 10;
 #X msg 17 235 disconnect;
 #X msg 101 37 send distortion \$1;
 #X msg 294 114 send headroom \$1;
@@ -21,10 +21,10 @@
 #X obj 311 -5 changerange 0 0.6;
 #X obj 324 26 changerange 100 10000;
 #X obj 345 71 changerange 1 20;
-#X msg 241 221 send distortionBypass \$1;
+#X msg 824 281 send distortionBypass \$1;
 #X msg 206 150 send fuzzBypass \$1;
 #X msg 28 28 send delayBypass \$1;
-#X msg 452 279 send reverbBypass \$1;
+#X msg 892 174 send reverbBypass \$1;
 #X obj 474 2 changerange 1 0;
 #X obj 199 48 changerange 0 0.9;
 #X obj 389 13 changerange 1 1000;
@@ -35,10 +35,14 @@
 #X msg 180 136 send dry \$1;
 #X msg 575 234 send wet \$1;
 #X obj 184 84 changerange 0 2;
+#X msg 395 167 send ringmodBlend \$1;
+#X msg 449 137 send ringmodPitch \$1;
+#X msg 606 170 send ringmodMode \$1;
 #X obj 333 -149 route /bypass /connect /disconnect /distortion /headroom
 /tone /the_ol_razzmatazz /distortionBypass /delayBypass /fuzzBypass
 /reverbBypass /fuzz_blend /feedback /delay_time /blend /signal_degrade
-/roomsize /damp /dry /wet;
+/roomsize /damp /dry /wet /ringmodBlend /ringmodPitch /ringmodMode
+;
 #X connect 0 0 5 0;
 #X connect 1 0 5 0;
 #X connect 2 0 5 0;
@@ -52,7 +56,7 @@
 #X connect 12 0 5 0;
 #X connect 13 0 5 0;
 #X connect 14 0 15 0;
-#X connect 15 0 35 0;
+#X connect 15 0 38 0;
 #X connect 16 0 5 0;
 #X connect 17 0 1 0;
 #X connect 18 0 2 0;
@@ -72,23 +76,29 @@
 #X connect 32 0 5 0;
 #X connect 33 0 5 0;
 #X connect 34 0 31 0;
-#X connect 35 0 12 0;
-#X connect 35 1 16 0;
-#X connect 35 2 0 0;
-#X connect 35 3 17 0;
-#X connect 35 4 18 0;
-#X connect 35 5 19 0;
-#X connect 35 6 20 0;
-#X connect 35 7 21 0;
-#X connect 35 8 23 0;
-#X connect 35 9 22 0;
-#X connect 35 10 24 0;
-#X connect 35 11 25 0;
-#X connect 35 12 26 0;
-#X connect 35 13 27 0;
-#X connect 35 14 28 0;
-#X connect 35 15 29 0;
-#X connect 35 16 30 0;
-#X connect 35 17 34 0;
-#X connect 35 18 32 0;
-#X connect 35 19 33 0;
+#X connect 35 0 5 0;
+#X connect 36 0 5 0;
+#X connect 37 0 5 0;
+#X connect 38 0 12 0;
+#X connect 38 1 16 0;
+#X connect 38 2 0 0;
+#X connect 38 3 17 0;
+#X connect 38 4 18 0;
+#X connect 38 5 19 0;
+#X connect 38 6 20 0;
+#X connect 38 7 21 0;
+#X connect 38 8 23 0;
+#X connect 38 9 22 0;
+#X connect 38 10 24 0;
+#X connect 38 11 25 0;
+#X connect 38 12 26 0;
+#X connect 38 13 27 0;
+#X connect 38 14 28 0;
+#X connect 38 15 29 0;
+#X connect 38 16 30 0;
+#X connect 38 17 34 0;
+#X connect 38 18 32 0;
+#X connect 38 19 33 0;
+#X connect 38 20 35 0;
+#X connect 38 21 36 0;
+#X connect 38 22 37 0;
