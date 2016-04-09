@@ -1,0 +1,6 @@
+#N canvas 756 265 641 346 10;
+#X obj 25 65 loadbang;
+#X obj 25 87 delay 100;
+#X msg 25 109 \; pd dsp 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;

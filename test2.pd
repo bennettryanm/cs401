@@ -1,0 +1,9 @@
+#N canvas 240 128 450 300 10;
+#X obj 118 32 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 96 117 netsend;
+#X msg 167 93 disconnect;
+#X msg 153 60 connect 192.168.0.100 10000;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;

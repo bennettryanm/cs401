@@ -1,0 +1,54 @@
+#N canvas 688 42 939 819 10;
+#X obj 488 290 hsl 128 15 0 -1 0 0 empty empty distortion -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 156 260 +~;
+#X obj 190 209 *~;
+#X obj 127 170 *~ 1;
+#X obj 153 323 lop~;
+#X obj 160 631 *~ 1;
+#X obj 304 306 hsl 128 15 1000 2000 0 0 empty empty tone -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 496 329 hsl 128 15 0.6 0 0 0 empty empty headroom -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 237 242 clip~ -0.2;
+#X floatatom 686 456 5 0 0 0 high_pass - -, f 5;
+#X obj 154 373 hip~;
+#X obj 264 365 - 1000;
+#X obj 262 406 / 2;
+#X floatatom 685 419 5 0 0 0 low_pass - -, f 5;
+#X obj 31 553 *~ -1;
+#X obj 156 481 *~;
+#X obj 484 450 hsl 128 15 1 20 0 0 empty empty the_ol_razzmatazz -2
+-8 0 10 -262144 -1 -1 0 1;
+#X obj 130 534 expr~ if($v1 > 0.7 \, 0.7+(($v1-0.7)/10) \, $v1);
+#X obj 134 574 expr~ if($v1 > 0.7 \, 0.7+(($v1-0.7)/15) \, $v1);
+#X obj 139 49 adc~;
+#X obj 118 751 dac~;
+#X obj 465 118 loadbang;
+#X obj 474 166 delay 100;
+#X msg 490 226 \; pd dsp 1;
+#X connect 0 0 2 1;
+#X connect 1 0 4 0;
+#X connect 2 0 8 0;
+#X connect 3 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 10 0;
+#X connect 5 0 20 0;
+#X connect 5 0 20 1;
+#X connect 6 0 4 1;
+#X connect 6 0 11 0;
+#X connect 6 0 13 0;
+#X connect 7 0 8 2;
+#X connect 8 0 1 1;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 1;
+#X connect 12 0 9 0;
+#X connect 14 0 18 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 14 0;
+#X connect 18 0 5 0;
+#X connect 19 0 3 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;

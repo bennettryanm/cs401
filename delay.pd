@@ -1,0 +1,44 @@
+#N canvas 707 171 835 770 10;
+#X obj 290 385 delread~ delayline;
+#X obj 172 165 delwrite~ delayline 1000;
+#X obj 338 206 hsl 128 15 1 1000 0 0 empty empty delay_time -2 -8 0
+10 -262144 -1 -1 3300 1;
+#X obj 418 134 hsl 128 15 0 0.9 0 0 empty empty feedback -2 -8 0 10
+-262144 -1 -1 2700 1;
+#X obj 242 235 *~;
+#X obj -10 252 *~;
+#X obj 38 144 hsl 128 15 1 40 0 0 empty empty signal_degrade -2 -8
+0 10 -262144 -1 -1 12700 1;
+#X obj -32 386 /~;
+#X obj 351 297 hsl 128 15 1 0 0 0 empty empty blend -2 -8 0 10 -262144
+-1 -1 5400 1;
+#X obj 227 463 *~;
+#X obj 387 464 - 1;
+#X obj 434 491 * -1;
+#X obj 324 486 *~;
+#X obj 267 509 +~;
+#X obj 167 64 adc~;
+#X obj 175 117 *~ 1;
+#X obj -98 305 clip~ -4 4;
+#X obj 241 568 dac~;
+#X connect 0 0 4 0;
+#X connect 0 0 12 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 1;
+#X connect 4 0 5 0;
+#X connect 5 0 16 0;
+#X connect 6 0 5 1;
+#X connect 6 0 7 1;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 1;
+#X connect 12 0 13 1;
+#X connect 13 0 17 0;
+#X connect 13 0 17 1;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 15 0 9 1;
+#X connect 16 0 7 0;
