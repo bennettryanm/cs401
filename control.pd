@@ -1,63 +1,72 @@
-#N canvas 117 22 1144 855 10;
+#N canvas 28 22 1144 855 10;
 #X msg 17 235 disconnect;
 #X obj 811 20 hsl 128 15 -1 1 0 0 empty empty distortion -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 12700 1;
 #X obj 713 82 hsl 300 15 100 10000 0 0 empty empty tone -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 2600 1;
 #X obj 811 47 hsl 128 15 0.6 0 0 0 empty empty headroom -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 12700 1;
 #X obj 835 116 hsl 128 15 1 20 0 0 empty empty the_ol_razzmatazz -2
--8 0 10 -262144 -1 -1 0 1;
+-8 0 10 -262144 -1 -1 12700 1;
 #X msg 101 37 send distortion \$1;
 #X msg 294 114 send headroom \$1;
 #X msg 329 175 send tone \$1;
 #X msg 342 248 send razzmatazz \$1;
 #X obj 419 586 netsend;
 #X obj 913 224 hsl 128 15 1 1000 0 0 empty empty delay_time -2 -8 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 2600 1;
 #X obj 915 184 hsl 128 15 0 0.9 0 0 empty empty feedback -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 7100 1;
 #X obj 919 261 hsl 128 15 1 0 0 0 empty empty blend -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6500 1;
 #X msg 715 210 send feedback \$1;
 #X msg 724 265 send delay_time \$1;
 #X msg 727 301 send blend \$1;
 #X obj 912 300 hsl 128 15 1 40 0 0 empty empty signal_degrade -2 -8
-0 10 -262144 -1 -1 0 1;
+0 10 -262144 -1 -1 7500 1;
 #X msg 700 355 send signal_degrade \$1;
 #X obj 915 405 hsl 128 15 1 0 0 0 empty empty fuzz_blend -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 12700 1;
 #X msg 722 415 send fuzz_blend \$1;
 #X msg 401 791 send clean \$1;
-#X obj 112 641 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 96 641 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 46 427 connect localhost 10000;
 #X msg 16 261 connect 192.168.0.100 10000;
 #X obj 917 446 hsl 128 15 0 1 0 1 empty empty 'roomsize' 20 8 0 10
--262144 -260097 -1 8600 0;
+-262144 -260097 -1 10800 0;
 #X obj 932 489 hsl 128 15 0 2 0 1 empty empty damp 20 8 0 10 -262144
--260097 -1 8800 0;
+-260097 -1 9800 0;
 #X obj 962 583 hsl 128 15 0 1 0 1 empty empty wet 20 8 0 10 -262144
--260097 -1 5700 0;
+-260097 -1 7300 0;
 #X obj 939 529 hsl 128 15 0 1 0 1 empty empty dry 20 8 0 10 -262144
--260097 -1 12700 0;
+-260097 -1 9400 0;
 #X msg 741 531 send roomsize \$1;
 #X msg 746 561 send damp \$1;
 #X msg 753 609 send dry \$1;
 #X msg 959 603 send wet \$1;
 #X msg 545 796 send distortionBypass \$1;
-#X msg 715 795 send fuzzBypass \$1;
-#X obj 113 678 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 449 738 send fuzzBypass \$1;
+#X obj 97 680 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 113 718 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 96 720 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 113 759 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 97 772 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 853 773 send delayBypass;
-#X text 32 642 CLEAN DISTORTION OCTFUZZ DELAY REVERB;
-#X msg 357 830 send reberbBypass \$1;
-#X obj 111 816 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 97 822 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
+#X msg 438 674 send delayBypass \$1;
+#X msg 357 830 send reverbBypass \$1;
+#X text 32 642 CLEAN DISTORTION OCTFUZZ RINGMOD DELAY REVERB;
+#X obj 96 748 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 208 639 send ringmodBypass \$1;
+#X obj 912 670 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 909 690 send ringmodBlend \$1;
+#X obj 910 727 hsl 128 15 1 800 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 907 747 send ringmodFrequency \$1;
 #X connect 0 0 9 0;
 #X connect 1 0 5 0;
 #X connect 2 0 7 0;
@@ -93,7 +102,13 @@
 #X connect 33 0 9 0;
 #X connect 34 0 32 0;
 #X connect 35 0 33 0;
-#X connect 36 0 37 0;
-#X connect 37 0 9 0;
+#X connect 36 0 38 0;
+#X connect 37 0 39 0;
+#X connect 38 0 9 0;
 #X connect 39 0 9 0;
-#X connect 40 0 39 0;
+#X connect 41 0 42 0;
+#X connect 42 0 9 0;
+#X connect 43 0 44 0;
+#X connect 44 0 9 0;
+#X connect 45 0 46 0;
+#X connect 46 0 9 0;
